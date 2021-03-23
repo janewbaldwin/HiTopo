@@ -1,0 +1,11 @@
+ ! NOAA/PMEL TMAP
+ ! PyFerret v7.4 (optimized)
+ ! Linux 3.10.0-514.21.1.el7.x86_64 - 05/16/18
+ ! 20-Jan-20 12:26     
+
+use taux_($1).nc
+use tauy_($1).nc
+let curl = tau_y[d=2,x=@ddc]-tau_x[d=1,y=@ddc]
+save/clobber/file=curl_($1).nc curl
+can dat/all
+can var/all
